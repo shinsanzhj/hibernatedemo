@@ -50,4 +50,12 @@ public class StudentCourseInfoTest extends BaseTest {
 		
 		session.save(info);
 	}
+	
+	// 测试日期字段
+	@Test
+	public void testDateField() {
+		StudentCourseInfo courseInfo = (StudentCourseInfo) session.get(StudentCourseInfo.class, "40288a595b250914015b250918430001");
+		System.out.println(new Date(courseInfo.getChooseTime().getTime()));
+		System.out.println(new Date());
+	}
 }
